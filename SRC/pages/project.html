@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skills</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="icon" href="/Assets/favicons/favicon.png" type="image/png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+
+    <header class="header" id="header">
+        <a href="../../index.html" class="logo"><span class="main-icon"></span><span>Peter</span></a>
+
+        <div class="navbar">
+         
+            <a href="./skills.html" class="active">skills</a>
+            <a href="./education.html">Education</a>
+           
+            <a href="./career.html">Career</a>
+ 
+            <a href="./hobbies.html">Hobbies</a>
+            <a href="./project.html">projects</a>
+        </div>
+
+        <div class="main">
+            <a href="contact.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Cyber Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .laptop-container {
+            position: relative;
+            width: 80px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .laptop-screen {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 45px;
+            background-color: #000;
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #555;
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.8);
+        }
+
+        .code-icon {
+            font-size: 30px;
+            color: #00bcd4;
+            text-shadow: 0 0 8px rgba(0, 200, 255, 0.9);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .glass-box:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .glass-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+            animation: slideBackground 20s linear infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        @keyframes slideBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 400px 400px;
+            }
+        }
+
+        .icon-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transition: transform 0.6s ease-in-out, background-color 0.3s ease;
+        }
+
+        .glass-box:hover .icon-container {
+            transform: rotateY(360deg) scale(1.1);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-icon {
+            font-size: 60px; /* Adjust icon size */
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .glass-box {
+                padding: 25px;
+            }
+
+            .project-title {
+                font-size: 1.5em;
+            }
+
+            .project-description {
+                font-size: 1em;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .laptop-container {
+                width: 60px;
+                height: 40px;
+            }
+            .laptop-screen {
+                top: -25px;
+                width: 50px;
+                height: 35px;
+            }
+            .code-icon {
+                font-size: 20px;
+            }
+            .icon-container {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+            .project-icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-hospital-symbol project-icon"></i>
+            </div>
+            <h2 class="project-title">Hospital System</h2>
+            <p class="project-description">A comprehensive system designed to manage hospital operations efficiently, from patient records to billing and inventory.</p>
+        </div>
+
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-school project-icon"></i>
+            </div>
+            <h2 class="project-title">School System</h2>
+            <p class="project-description">An integrated platform for schools to handle student information, attendance, grades and communication.</p>
+        </div>
+
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-hotel project-icon"></i>
+            </div>
+            <h2 class="project-title">Hotel System</h2>
+            <p class="project-description">Solution for hotels to streamline bookings, guest services, room management, and front desk operations.</p>
+        </div>
+
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-chart-line project-icon"></i>
+            </div>
+            <h2 class="project-title">Trading App</h2>
+            <p class="project-description">A robust mobile application facilitating real-time stock trading, portfolio management, and market analysis.</p>
+        </div>
+
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-gamepad project-icon"></i>
+            </div>
+            <h2 class="project-title">Gaming App</h2>
+            <p class="project-description">An immersive gaming application offering various exciting games and a seamless user experience.</p>
+        </div>
+
+        <div class="glass-box">
+            <div class="icon-container">
+                <i class="fas fa-map-marked-alt project-icon"></i>
+            </div>
+            <h2 class="project-title">GPSC APP</h2>
+            <p class="project-description">A dedicated application for the Gujarat Public Service Commission, aiding in exam preparation and notifications.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Peter Mayende. All rights reserved.
+    </footer>
+</body>
+</html>

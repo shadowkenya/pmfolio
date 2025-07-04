@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="SRC/style/style.css" />
+  <link rel="icon" href="Assets/favicons/sha.png" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+  <style>
+    /* Logo animation */
+    .logo span.name-blink {
+      animation: colorBlink 1.5s infinite;
+      font-weight: bold;
+    }
+
+    @keyframes colorBlink {
+      0% { color: pink; }
+      33% { color: green; }
+      66% { color: blue; }
+      100% { color: black; }
+    }
+
+    .waving-emoji {
+      display: inline-block;
+      animation: wave 2s infinite;
+      transform-origin: 70% 70%;
+      font-size: 1.2rem;
+      margin-left: 4px;
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(14deg); }
+      30% { transform: rotate(-8deg); }
+      45% { transform: rotate(14deg); }
+      60% { transform: rotate(-4deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    #datetime-top {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-left: 20px;
+    }
+
+    .main {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Animated text under name */
+    .animated-text-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .animated-text {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      animation: slideToCenter 4s ease-in-out infinite;
+    }
+
+    @keyframes slideToCenter {
+      0% {
+        left: 0;
+        transform: translateX(0);
+      }
+      25% {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      50% {
+        left: 0;
+        transform: translateX(0);
+      }
+      75% {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      100% {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #datetime-top {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header" id="header">
+    <a href="index.html" class="logo" style="display: block; text-align: center;">
+      <span class="main-icon"></span>
+      <span>PM Portfolio</span>
+      <span class="waving-emoji">👋</span>
+
+      <!-- NEW: Animated text directly below name -->
+      <div class="animated-text-container">
+        <span id="animatedText" class="animated-text" style="color: blue;">Best</span>
+      </div>
+    </a>
+
+    <div class="navbar">
+      <a href="SRC/pages/skills.html">Skills</a>
+      <a href="SRC/pages/education.html">Education</a>
+      <a href="SRC/pages/career.html">Career</a>
+      <a href="SRC/pages/hobbies.html">Hobbies</a>
+      <a href="SRC/pages/project.html">Projects</a>
+    </div>
+
+    <div class="main">
+      <div id="datetime-top"></div>
+      <a href="SRC/pages/contact.html" class="user main-items">
+        <i class="fas fa-envelope cm-icon"></i>Contact Me
+      </a>
+      <div class="main-items menu-icon-container" id="menu-icon-js">
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <section class="about" id="about">
+      <div class="about-content">
+        <div class="datetime-wrapper">
+          <div id="datetime-top"></div>
+        </div>
+
+        <div class="column right">
+          <img src="Assets/sha.png" alt="">
+        </div>
+
+        <div class="column left">
+          <div class="text">I'm Peter and I'm a <span id="typed" class="iAm"></span></div>
+          <p>
+            I’m a 24-year-old Web Developer passionate about crafting elegant, user-friendly
+            websites and mobile apps. 
+          </p>
+          <div class="buttons">
+            <a href="cv.pdf" class="btn btn-outline-primary">Download CV</a>
+            <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="left">
+        &copy; 2025 •Peter Mayende • All Rights Reserved
+      </div>
+      <div class="right">
+        <div class="social">
+          <a href="https://web.facebook.com/shadowkenya2002/"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a></div>
+        <div class="social"><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
+        <div class="social"><a href="#"><i class="fa-brands fa-github"></i></a></div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="nav-touch-close" id="nav-tc-js"></div>
+
+  <script src="SRC/script/script.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script>
+    // Typed text effect
+    var typed = new Typed('#typed', {
+      strings: ['Frontend Dev', 'Backend Dev', 'Mobile apps Dev'],
+      typeSpeed: 100,
+      loop: true
+    });
+
+    // Date and time with seconds
+    function updateDateTime() {
+      const now = new Date();
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const dayName = days[now.getDay()];
+      const date = now.toLocaleDateString();
+      const time = now.toLocaleTimeString();
+      document.getElementById("datetime-top").textContent = `${dayName}, ${date} ${time}`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Change animated text content + color
+    const animatedText = document.getElementById("animatedText");
+    const textCycle = ["Hire Me"];
+    const colorCycle = ["blue", "green"];
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % textCycle.length;
+      animatedText.textContent = textCycle[index];
+      animatedText.style.color = colorCycle[index];
+    }, 2000);
+  </script>
+</body>
+</html>
